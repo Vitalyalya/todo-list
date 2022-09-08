@@ -1,0 +1,312 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  padding: 0 32px;
+  background-color: beige;
+}
+
+.container {
+  max-width: 700px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 60px 0 60px 0;
+}
+
+.input-form {
+  position: relative;
+}
+
+.form input {
+  width: 100%;
+}
+
+.input {
+  z-index: 1;
+  height: 45px;
+  width: 100%;
+  padding: 12px 60px 12px 12px;
+
+  font-size: 16px;
+  font-family: inherit;
+  border-radius: 5px;
+
+  border: none;
+  -webkit-appearance: none;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
+
+  outline: none;
+
+  transition: scale 0.2s;
+  transition: background-color 0.5s ease;
+  position: relative;
+}
+
+#task-title {
+  margin-top: 50px;
+  font-size: 24px;
+  text-align: center;
+}
+
+.collection-item {
+  min-height: 50px;
+
+  display: grid;
+  grid-template-columns: 1fr 15fr 1fr 1fr;
+  column-gap: 10px;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 22px;
+
+  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.3);
+  border-radius: 5px;
+  background-color: #fff;
+  margin: 14px 0 14px 0;
+  transform-origin: center left;
+}
+
+.collection-item:last-child {
+  margin-bottom: 28px;
+}
+
+.task-text {
+  word-break: break-all;
+  padding: 5px 0;
+}
+
+.text-plus-input {
+  position: relative;
+}
+
+.input-task {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  box-shadow: none;
+  margin: auto;
+
+  padding: 10px 0;
+
+  resize: none;
+
+  overflow: hidden;
+  min-height: 50px;
+  max-height: 100px;
+
+  align-content: center;
+  z-index: -1;
+}
+
+.delete-item,
+.edit-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 10px;
+  border: 2px solid lightcoral;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.delete-icon,
+.edit-icon {
+  pointer-events: none;
+}
+
+.checkmark {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  text-decoration: none;
+  height: 20px;
+  width: 20px;
+  border: 1px solid lightcoral;
+
+  cursor: pointer;
+  transition: all 0.3s;
+
+  background-color: #f5f7f9;
+
+  border-radius: 50%;
+}
+
+.checkmark:active,
+.color:active::after,
+.color-palette:active,
+.delete-item:active,
+.edit-item:active {
+  scale: 0.9;
+}
+
+.btn:active {
+  scale: 0.98;
+}
+
+.checked .done-icon {
+  display: block;
+}
+
+.checkmark.checked {
+  background-color: #ededed;
+}
+
+.done-icon {
+  pointer-events: none;
+  display: none;
+}
+
+.btn {
+  display: inline-block;
+  text-decoration: none;
+  justify-content: center;
+  color: #000;
+  margin-top: 36px;
+  width: 150px;
+  padding: 12px 18px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
+  border-radius: 5px;
+  background-color: #dedede;
+}
+
+.done {
+  text-decoration: line-through;
+  color: #759393;
+}
+
+.collection-done {
+  display: none;
+  border-top: 2px solid #a3a3a3;
+}
+
+.colors.show {
+  transform: translateY(35%);
+}
+
+.color.white::after {
+  background-color: #fff;
+}
+
+.color.lightcyan::after {
+  background-color: lightcyan;
+}
+
+.color.cyan::after {
+  background-color: cyan;
+}
+
+.color.lightblue::after {
+  background-color: lightblue;
+}
+
+.color.orange::after {
+  background-color: orange;
+}
+
+.color.burlywood::after {
+  background-color: burlywood;
+}
+
+.color.yellow::after {
+  background-color: yellow;
+}
+
+.color.lightgreen::after {
+  background-color: lightgreen;
+}
+
+.color.lightpink::after {
+  background-color: lightpink;
+}
+
+.color::after {
+  display: inline-block;
+  content: "";
+
+  padding: 15px 30px;
+  border-radius: 10px;
+
+  left: 0;
+  /* margin-right: 15px; */
+
+  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.3);
+}
+
+.colors {
+  position: absolute;
+
+  max-width: 700px;
+
+  width: 100%;
+
+  overflow-x: auto;
+
+  display: flex;
+  gap: 13px;
+
+  padding: 0 5px;
+
+  transform: translateY(-102%);
+  transition: all 0.3s ease-in;
+}
+
+.color-palette {
+  z-index: 2;
+  font-size: 30px;
+  position: absolute;
+  height: 100%;
+  right: 28px;
+  color: #2a4242;
+
+  transition: color 0.3s;
+}
+
+.color-palette:hover {
+  color: #a3a3a3;
+}
+
+@media (hover: hover) {
+  .checkmark:hover,
+  .checkmark.checked:hover {
+    background-color: #aaa;
+  }
+  .delete-item:hover,
+  .edit-item:hover {
+    background-color: lightcoral;
+  }
+}
+
+/* scrollbar */
+
+/* width */
+::-webkit-scrollbar {
+  height: 3px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px grey;
+  border-radius: 1px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #dedede;
+  border-radius: 1px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #a3a3a3;
+}

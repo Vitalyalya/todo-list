@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" href="/style.css" />
+    <title>Todo List</title>
+  </head>
+  <body>
+    <section class="container">
+      <form class="task-form">
+        <div class="input-form">
+          <input placeholder="New Task" type="text" class="input" autofocus />
+          <ion-icon
+            class="color-palette"
+            name="color-palette-outline"
+          ></ion-icon>
+          <div class="colors">
+            <span class="color white"></span>
+            <span class="color lightcyan"></span>
+            <span class="color cyan"></span>
+            <span class="color lightblue"></span>
+            <span class="color lightgreen"></span>
+            <span class="color orange"></span>
+            <span class="color burlywood"></span>
+            <span class="color lightpink"></span>
+            <span class="color yellow"></span>
+          </div>
+        </div>
+      </form>
+      <div class="card-action">
+        <h5 id="task-title">Tasks</h5>
+
+        <ul class="collection"></ul>
+      </div>
+      <div class="card-done">
+        <ul class="collection-done"></ul>
+      </div>
+      <a href="#" class="btn">Clear Tasks</a>
+    </section>
+
+    <script src="/script.js"></script>
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
+    ></script>
+  </body>
+</html>
